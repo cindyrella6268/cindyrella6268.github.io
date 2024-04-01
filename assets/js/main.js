@@ -235,12 +235,11 @@ button3.addEventListener('click', function() {
 });
 
 function toggleContent(content) {
-    if (content.classList.contains("is-active")) {
-        content.classList.remove("is-active");
-    } else {
-        content1.classList.remove("is-active");
-        content2.classList.remove("is-active");
-        content3.classList.remove("is-active");
-        content.classList.add("is-active");
-    }
+    // Remove "is-active" class from all content elements
+    content1.classList.remove("is-active");
+    content2.classList.remove("is-active");
+    content3.classList.remove("is-active");
+
+    // Add "is-active" class to the clicked content element
+    content.classList.add("is-active");
 }
