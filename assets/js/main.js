@@ -173,52 +173,74 @@
 
 })(jQuery);
 
-const button1 = document.getElementById("button1");
-const button2 = document.getElementById("button2");
-const button3 = document.getElementById("button3");
-const content1 = document.getElementById("content1");
-const content2 = document.getElementById("content2");
-const content3 = document.getElementById("content3");
-document.addEventListener('click', function (event) {
-if (event.target == button1){
-	if (content1.classList.contains("is-active")){
-		content1.classList.remove("is-active");
-	} else{
-		if (content2.classList.contains("is-active")){
-			content2.classList.remove("is-active");
-		}
-		if (content3.classList.contains("is-active")){
-			content3.classList.remove("is-active");
-		}
-		content1.classList.add("is-active");
-	}
-}
-if (event.target == button2){
-	if (content2.classList.contains("is-active")){
-		content2.classList.remove("is-active");
-	} else{
-		if (content1.classList.contains("is-active")){
-			content1.classList.remove("is-active");
-		}
-		if (content3.classList.contains("is-active")){
-			content3.classList.remove("is-active");
-		}
-		content2.classList.add("is-active");
-	}
-}
-if (event.target == button3){
-	if (content3.classList.contains("is-active")){
-		content3.classList.remove("is-active");
-	} else{
-		if (content2.classList.contains("is-active")){
-			content2.classList.remove("is-active");
-		}
-		if (content1.classList.contains("is-active")){
-			content1.classList.remove("is-active");
-		}
-		content3.classList.add("is-active");
-	}
-}
-return;
+// const button1 = document.getElementById("button1");
+// const button2 = document.getElementById("button2");
+// const button3 = document.getElementById("button3");
+// const content1 = document.getElementById("content1");
+// const content2 = document.getElementById("content2");
+// const content3 = document.getElementById("content3");
+// document.addEventListener('click', function (event) {
+// if (event.target == button1){
+// 	if (content1.classList.contains("is-active")){
+// 		content1.classList.remove("is-active");
+// 	} else{
+// 		if (content2.classList.contains("is-active")){
+// 			content2.classList.remove("is-active");
+// 		}
+// 		if (content3.classList.contains("is-active")){
+// 			content3.classList.remove("is-active");
+// 		}
+// 		content1.classList.add("is-active");
+// 	}
+// }
+// if (event.target == button2){
+// 	if (content2.classList.contains("is-active")){
+// 		content2.classList.remove("is-active");
+// 	} else{
+// 		if (content1.classList.contains("is-active")){
+// 			content1.classList.remove("is-active");
+// 		}
+// 		if (content3.classList.contains("is-active")){
+// 			content3.classList.remove("is-active");
+// 		}
+// 		content2.classList.add("is-active");
+// 	}
+// }
+// if (event.target == button3){
+// 	if (content3.classList.contains("is-active")){
+// 		content3.classList.remove("is-active");
+// 	} else{
+// 		if (content2.classList.contains("is-active")){
+// 			content2.classList.remove("is-active");
+// 		}
+// 		if (content1.classList.contains("is-active")){
+// 			content1.classList.remove("is-active");
+// 		}
+// 		content3.classList.add("is-active");
+// 	}
+// }
+// return;
 
-})
+// })
+button1.addEventListener('click', function() {
+    toggleContent(content1);
+});
+
+button2.addEventListener('click', function() {
+    toggleContent(content2);
+});
+
+button3.addEventListener('click', function() {
+    toggleContent(content3);
+});
+
+function toggleContent(content) {
+    if (content.classList.contains("is-active")) {
+        content.classList.remove("is-active");
+    } else {
+        content1.classList.remove("is-active");
+        content2.classList.remove("is-active");
+        content3.classList.remove("is-active");
+        content.classList.add("is-active");
+    }
+}
