@@ -3142,3 +3142,12 @@ input, select, textarea {
 				}
 
 	}
+.mydropdown {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 1s ease-in-out; /* Add transition property */
+}
+
+.mydropdown.is-active {
+    max-height: 500px; /* Set max-height to desired value when active */
+}
